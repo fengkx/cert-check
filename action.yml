@@ -1,5 +1,5 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Check Certificates'
+description: 'Check Certificates output to gist'
 inputs:
   sites:
     description: 'Sites to check split by ","'
