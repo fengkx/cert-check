@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Certificate Status</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1><img class="logo" src="assets/img/lock.svg" alt="lock">Certificate Status</h1>
+    </header>
+    <div id="app">
+        <div class="sites">
+            <section v-for="cert of cCerts" class="site">
+                <header class="site-header">
+                    <span class="url">{{ cert.site }}</span>
+                    <span class="site-status">
+                        <span v-if="cert.ok" class="status-ok">Valid</span>
+                        <span v-else-if="cert.expired" class="status-warning">
+                            Expired
+                        </span>
+                        <span v-else class="status-error">
+                            {{ cert.message.substring(0, cert.message.indexOf(':')) }}
+                        </span>
+                    </span>
+                </header>
+                <div class="site-info">
+
+                    <div class="last-check">
+                        <span class="label">Last check at: </span>
+                        {{ cert.last_check }}
+                    </div>
+                    <div class="valid-from">
+                        <span class="label">Valid from: </span>
+                        {{ cert.valid_from }}
+                    </div>
+                    <div class="valid-to">
+                        <span class="label">Valid to: </span>
+                        {{ cert.valid_to }}
+                    </div>
+                    <div class="issuer">
+                        <span class="label">Issuer: </span>
+                        {{ cert.issuer }}
+                    </div>
+                    <div class="subject">
+                        <span class="label">Subject: </span>
+                        {{ cert.subject }}
+                    </div>
+                    <div v-if="cert.ok" class="remain-day">
+                        <span class="label">Remain: </span>
+                        {{ cert.remain + 'd' }}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

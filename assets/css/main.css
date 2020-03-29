@@ -1,0 +1,71 @@
+body {
+    background-color: hsl(0, 0%, 97%);
+}
+.header {
+    margin: 1.75rem;
+}
+.header h1 {
+    max-width: 30rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.3rem;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+}
+.logo {
+    width: 3rem;
+    height: 3rem;
+    margin-right: .5rem;
+}
+@media (max-width: 640px) {
+    .sites {
+        grid-template-columns: repeat(1,minmax(0,1fr));
+    }
+}
+
+@media (min-width: 640px) {
+    .sites {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+}
+.sites {
+    display: grid;
+    row-gap: 5rem;
+    max-width: 80rem;
+    margin: auto;
+}
+.site {
+    padding: 1.2rem;
+    margin: .5rem 1.375rem;
+    min-height: 12rem;
+    background-color: white;
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: 1.7rem;
+    color: rgba(0,0,0,.87);
+}
+
+.site-header {
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: .8rem;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 2px;
+    border-color: hsl(0,0%, 93%);
+    margin-bottom: .8rem;
+}
+.site-header .url {
+    margin-right: .5rem;
+}
+.status-ok {
+    color: green;
+}
+.status-warning {
+    color: yellow;
+}
+.status-error {
+    color: red;
+}
