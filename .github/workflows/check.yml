@@ -13,5 +13,5 @@ jobs:
         uses: fengkx/cert-check@1.0.0
         with:
           gist_id: '32278de43b1c11c99c62b3e87d9eb5db'
-          sites: 'https://www.fengkx.top, https://rss.fengkx.top, https://feedpress.me'
+          sites: 'https://www.fengkx.top, https://rss.fengkx.top, https://cert-check.fengkx.top, https://boom.fengkx.top, https://draw.fengk.top , https://feedpress.me'
           github_pat: ${{ secrets.GITHUB_PAT }}
