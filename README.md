@@ -8,9 +8,9 @@
 
 Since the `gist.githubusercontent.com` has CORS headers, we can make a status page using this JSON data in gist.
 
-An example is This repository itself contain an `index.html` and `asset` directory 
+An example is This repository itself contains an `index.html` and a `asset` directory.
 
-You can make your own status page once you deploy this action. Just modify the url in [asset/main.js](https://github.com/fengkx/cert-check/blob/master/assets/js/main.js#L6) do the trick. 
+You can make your own status page once you deployed this action. Just modify the url in [asset/main.js](https://github.com/fengkx/cert-check/blob/master/assets/js/main.js#L6) do the trick. 
 
 Live Demo: [https://cert-check.fengkx.top/](https://cert-check.fengkx.top/)
 
