@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js",
-    "package": "ncc build index.js -o dist",
+    "package": "ncc build index.js -o dist && cp action.yml .github/actions/check-certs/action.yml",
     "test": "eslint index.js && jest"
   },
   "repository": {
@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/actions/javascript-action#readme",
   "dependencies": {
-    "@actions/core": "^1.1.1"
+    "@actions/core": "^1.1.1",
+    "gist-box": "^0.3.0"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.5",

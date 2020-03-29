@@ -1,13 +1,19 @@
 name: 'Wait'
 description: 'Wait a designated number of milliseconds'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  sites:
+    description: 'Sites to check split by ","'
     required: true
-    default: '1000'
+  gist_id:
+    description: 'The id of gist to update'
+    required: true
+  github_pat:
+    description: 'GitHub personal acces token to update gist'
+    required: true
 outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+  cert_data: # output will be available to future steps
+    description: 'Certs'
 runs:
   using: 'node12'
   main: 'dist/index.js'
+
