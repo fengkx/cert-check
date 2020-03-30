@@ -7,12 +7,14 @@ var app = new Vue({
         }
     },
     async created() {
-        const resp = await fetch(this.gist);
+        let resp;
         try {
+            resp = await fetch(this.gist);
+            if(!resp.ok) throw resp;
             const certs = await resp.json();
             this.certs = certs;
         } catch (e) {
-            alert('Network error' + e.message);
+            alert(`Network error to ${this.gist} ${e.status} ${e.statusText}`);
         }
     },
     methods: {
