@@ -10,46 +10,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.3rem;
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-size: 1.375rem;
 }
 .logo {
     width: 3rem;
     height: 3rem;
     margin-right: .5rem;
 }
-@media (max-width: 640px) {
-    .sites {
-        -ms-grid-columns: (minmax(0,1fr))[1];
-        grid-template-columns: repeat(1,minmax(0,1fr));
-    }
-}
 
-@media (min-width: 640px) {
-    .sites {
-        -ms-grid-columns: (minmax(0,1fr))[2];
-        grid-template-columns: repeat(2,minmax(0,1fr));
-    }
-}
 .sites {
     display: -ms-grid;
     display: grid;
-    row-gap: 5rem;
+    row-gap: 2.5rem;
     max-width: 80rem;
     margin: auto;
 }
 .site {
     padding: 1.2rem;
-    margin: .5rem 1.375rem;
+    margin: 1rem 0;
     min-height: 12rem;
     background-color: white;
-    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.7rem;
     color: rgba(0,0,0,.87);
 }
-
 .site-header {
     font-weight: bold;
     font-size: 18px;
@@ -63,6 +49,7 @@ body {
 .site-header .url {
     margin-right: .5rem;
 }
+
 .status-ok {
     color: green;
 }
@@ -75,10 +62,9 @@ body {
 footer {
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem 0;
     margin-bottom: 1.25rem;
 }
-
 #github-repo, #github-action {
     font-weight: bolder;
     -webkit-text-decoration-line: none;
@@ -90,4 +76,34 @@ footer {
 }
 #github-action {
     color: #1074e7;
+}
+
+@media (min-width: 321px) {
+    .site {
+        margin-left: 1.375rem;
+        margin-right: 1.375rem;
+        box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+}
+
+@media (min-width: 400px) {
+    .site {
+        margin: .5rem 1.375rem;
+        font-size: 16px;
+    }
+    footer {
+        padding: 2rem;
+    }
+}
+
+
+@media (min-width: 640px) {
+    .header h1 {
+        font-size: 2.3rem;
+    }
+    .sites {
+        -ms-grid-columns: (minmax(0,1fr))[2];
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
 }
