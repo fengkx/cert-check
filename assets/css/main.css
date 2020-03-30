@@ -20,16 +20,19 @@ body {
 }
 @media (max-width: 640px) {
     .sites {
+        -ms-grid-columns: (minmax(0,1fr))[1];
         grid-template-columns: repeat(1,minmax(0,1fr));
     }
 }
 
 @media (min-width: 640px) {
     .sites {
+        -ms-grid-columns: (minmax(0,1fr))[2];
         grid-template-columns: repeat(2,minmax(0,1fr));
     }
 }
 .sites {
+    display: -ms-grid;
     display: grid;
     row-gap: 5rem;
     max-width: 80rem;
@@ -68,4 +71,23 @@ body {
 }
 .status-error {
     color: red;
+}
+footer {
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+#github-repo, #github-action {
+    font-weight: bolder;
+    -webkit-text-decoration-line: none;
+    text-decoration-line: none;
+}
+
+#github-repo {
+    color: green;
+}
+#github-action {
+    color: #1074e7;
 }

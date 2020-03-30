@@ -14,7 +14,12 @@ var app = new Vue({
             const certs = await resp.json();
             this.certs = certs;
         } catch (e) {
-            alert(`Network error to ${this.gist} ${e.status} ${e.statusText}`);
+            let msg = 'GitHub Gist may be blocked in Mainland China!\n';
+            if(e.status && e.statusText) {
+                alert(`${msg} Network error to ${this.gist} ${e.status} ${e.statusText}`);
+            } else {
+                alert(msg + e);
+            }
         }
     },
     methods: {
